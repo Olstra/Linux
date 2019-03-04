@@ -23,9 +23,7 @@ vnoremap <C-W> <C-C>:update<CR>
 inoremap <C-W> <C-O>:update<CR> Quicksave
 
 
-" easier moving of code blocks
-" Try to go into visual mode (v), then select several lines of code here and
-" then press ``>`` several times.
+" Indentation - does not lose selection after indent
 vnoremap < < gv  
 vnoremap > > gv  
 
