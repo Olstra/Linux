@@ -26,8 +26,8 @@ inoremap <C-W> <C-O>:update<CR> Quicksave
 " easier moving of code blocks
 " Try to go into visual mode (v), then select several lines of code here and
 " then press ``>`` several times.
-vnoremap < <gv  
-vnoremap > >gv  
+vnoremap < < gv  
+vnoremap > > gv  
 
 " bind Ctrl+<movement> keys to move around the windows, instead of using Ctrl+w + <movement>
 " Every unnecessary keystroke that can be saved is good for your health :)
