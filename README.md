@@ -1,12 +1,11 @@
 # Linux
-Linux config, useful bash scripts, .vimrc
 
-* bash scripts
+## bash scripts
 ** install software
 
-* configuration files
+## configuration files
 
-* .vimrc
+### .vimrc
 
 ## Author
 **Olstra**
