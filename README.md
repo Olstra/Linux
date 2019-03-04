@@ -1,7 +1,7 @@
 # Linux
 
 ## bash scripts
-** install software
+* install software
 
 ## configuration files
 
