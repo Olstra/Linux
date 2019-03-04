@@ -16,10 +16,8 @@ sudo apt update
 sudo apt-get upgrade
 sudo apt upgrade
 
-
 # install
 sudo apt-get install grub-customizer dconf-editor gparted aptik aptik-gtk usb-creator-gtk transmission-cli transmission-common transmission-daemon libsfml-dev libsdl2-dev python3-distutils -y
-
 sudo apt install gnome-tweak-tool gnome-shell-extensions virtualbox build-essential codeblocks git vim -y
 
 sudo snap install spotify vlc krita 
