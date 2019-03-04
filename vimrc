@@ -26,9 +26,11 @@ inoremap <C-W> <C-O>:update<CR> Quicksave
 vnoremap < < gv  
 vnoremap > > gv  
 
-" bind Ctrl+<movement> keys to move around the windows, instead of using Ctrl+w + <movement>
-" Every unnecessary keystroke that can be saved is good for your health :)
-"" map <c-j> <c-w>j
-"" map <c-k> <c-w>k
-"" map <c-l> <c-w>l
-"" map <c-h> <c-w>h
+" bind Ctrl+<movement> keys to move around windows, instead of Ctrl+w + <movement>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" set current file's directory automaticaly
+set autochdir
