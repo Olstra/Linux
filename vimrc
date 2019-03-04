@@ -22,7 +22,6 @@ noremap <C-W> :update<CR>
 vnoremap <C-W> <C-C>:update<CR>
 inoremap <C-W> <C-O>:update<CR> Quicksave
 
-
 " Indentation - does not lose selection after indent
 vnoremap < < gv  
 vnoremap > > gv  
