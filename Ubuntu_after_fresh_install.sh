@@ -21,8 +21,9 @@ sudo apt-get install grub-customizer dconf-editor gparted aptik aptik-gtk usb-cr
 sudo apt install gnome-tweak-tool gnome-shell-extensions virtualbox build-essential codeblocks git vim -y
 
 sudo snap install spotify vlc krita 
-sudo snap install  clion --classic 
+sudo snap install clion --classic 
 sudo snap install pycharm-professional --classic
+sudo snap install tmux --classic
 
 # System settings 
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
