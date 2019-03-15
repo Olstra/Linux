@@ -6,8 +6,8 @@
 
 ## configuration files
 
-### .vimrc
-### .tmux.conf
+* .vimrc
+* .tmux.conf
 
 ## Author
 **Olstra**
