@@ -1,5 +1,5 @@
 #!/bin/bash
-# 16. Feb 2019, by olstra
+# 15. March 2019, by olstra
 
 # add repos
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y # Tweaks
@@ -17,13 +17,13 @@ sudo apt-get upgrade
 sudo apt upgrade
 
 # install
-sudo apt-get install grub-customizer dconf-editor gparted aptik aptik-gtk usb-creator-gtk transmission-cli transmission-common transmission-daemon libsfml-dev libsdl2-dev python3-distutils -y
-sudo apt install gnome-tweak-tool gnome-shell-extensions virtualbox build-essential codeblocks git vim -y
+sudo apt-get install grub-customizer dconf-editor gparted aptik aptik-gtk usb-creator-gtk transmission-cli transmission-common transmission-daemon libsfml-dev libsdl2-dev python3-distutils clang -y
+
+sudo apt install gnome-tweak-tool gnome-shell-extensions virtualbox build-essential codeblocks git vim cmake python3-dev -y
 
 sudo snap install spotify vlc krita 
-sudo snap install clion --classic 
+sudo snap install  clion --classic 
 sudo snap install pycharm-professional --classic
-sudo snap install tmux --classic
 
 # System settings 
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
