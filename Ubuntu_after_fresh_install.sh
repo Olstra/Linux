@@ -17,7 +17,7 @@ sudo apt-get upgrade
 sudo apt upgrade
 
 # install
-sudo apt-get install grub-customizer dconf-editor gparted aptik aptik-gtk usb-creator-gtk transmission-cli transmission-common transmission-daemon libsfml-dev libsdl2-dev python3-distutils clang -y
+sudo apt-get install grub-customizer dconf-editor gparted aptik aptik-gtk usb-creator-gtk transmission-cli transmission-common transmission-daemon texlive-full libsfml-dev libsdl2-dev python3-distutils clang -y
 
 sudo apt install gnome-tweak-tool gnome-shell-extensions virtualbox build-essential codeblocks git vim cmake python3-dev -y
 
