@@ -1,7 +1,7 @@
 ## Different .vimrc configuration files:
 
 # Basic vimrc:
-	* no plugins
+	- no plugins
 	* no color schemes
 	* basic keybingings, syntax highlight, line numbers
 
