@@ -7,5 +7,5 @@
 
 # vimrc:
 	My current .vimrc configuration
-	* YouCompleteMe: for code autocompletion
-	* Color Theme: Monokai
+	*YouCompleteMe: for code autocompletion
+	*Color Theme: Monokai
