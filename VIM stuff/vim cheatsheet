@@ -1,3 +1,10 @@
-" Replace occurrence in whole file but ask first if it's ok
-" g = 'globaly'
+" DELETING
+" delete word and insert
+  ce
+
+" go to MATCHING BRACE
+" move cursor to brace, then type %
+
+" REPLACE occurrence in whole file (%) but ask first if it's ok (c)
+" g = 'globaly' (without % = in whole line, whithout c = don't ask)
   :%s/old/new/gc
