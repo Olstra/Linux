@@ -1,0 +1,3 @@
+" Replace occurrence in whole file but ask first if it's ok
+" g = 'globaly'
+  :%s/old/new/gc
