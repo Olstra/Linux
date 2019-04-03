@@ -17,13 +17,16 @@ sudo apt-get upgrade
 sudo apt upgrade
 
 # install
-sudo apt-get install terminator grub-customizer dconf-editor gparted aptik aptik-gtk usb-creator-gtk transmission-cli transmission-common transmission-daemon texlive-full libsfml-dev libsdl2-dev python3-distutils clang -y
+sudo apt-get install python-numpy grub-customizer dconf-editor gparted aptik aptik-gtk usb-creator-gtk transmission-cli transmission-common transmission-daemon texlive-full libsfml-dev libsdl2-dev python3-distutils clang -y
 
-sudo apt install gnome-tweak-tool gnome-shell-extensions virtualbox build-essential codeblocks git vim cmake python3-dev -y
+sudo apt install python-pip gnome-tweak-tool gnome-shell-extensions virtualbox build-essential codeblocks git vim cmake python3-dev -y
 
 sudo snap install spotify vlc krita 
 sudo snap install  clion --classic 
 sudo snap install pycharm-professional --classic
+
+# python stuff
+pip install python-docx
 
 # System settings 
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
