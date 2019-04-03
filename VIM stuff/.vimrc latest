@@ -6,31 +6,7 @@
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+filetype plugin on " to determine type specific language
 
 " Line numbers
 set number
@@ -47,7 +23,11 @@ set shiftwidth=4
 set noexpandtab
 
 " Automatic reloading of .vimrc
-autocmd! bufwritepost .vimrc source %
+" autocmd! bufwritepost .vimrc source %
+augroup myvimrc
+    au!
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
 
 " Copy/Paste
 set clipboard=unnamed
@@ -70,9 +50,43 @@ nnoremap <C-H> <C-W><C-H>
 " set current file's directory automaticaly
 set autochdir
 
-" you complete me plug in
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+" automatic matching braces""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" automatic matching braces
 inoremap ( ()<left>
 inoremap { {}<left>
+inoremap [ []<left>
+
+" highlight search results""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Press F4 to toggle highlighting on/off, and show current value.
+:noremap <F4> :set hlsearch! hlsearch?<CR>
+
+" This rewires n and N to do the highlighing...
+nnoremap <silent> n   n:call HLNext(0.4)<cr>
+nnoremap <silent> N   N:call HLNext(0.4)<cr>
+
+highlight theColors ctermfg=black ctermbg=yellow
+" Stolen from: yt dude...
+    function! HLNext (blinktime)
+        let [bufnum, lnum, col, off] = getpos('.')
+        let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+        let target_pat = '\c\%#\%('.@/.'\)'
+        let ring = matchadd('theColors', target_pat, 101)
+        redraw
+        exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+        call matchdelete(ring)
+        redraw
+    endfunction
+
+" Drag visual blocks""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+ 
+runtime plugin/dragvisuals.vim " load plugin
+
+""""remove any introduced trailing whitespace after moving... 
+let g:DVB_TrimWS = 1                                            
+                                                                    
+" Or, if you use the arrow keys for normal motions, choose four other keys for block dragging. For example:	
+vmap  <expr>  h        DVB_Drag('left')                         
+vmap  <expr>  l        DVB_Drag('right')                        
+vmap  <expr>  j        DVB_Drag('down')                         
+vmap  <expr>  k        DVB_Drag('up')  
