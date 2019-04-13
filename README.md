@@ -8,6 +8,7 @@
 
 * .vimrc
 * .tmux.conf
+* firefox custom css theme
 
 ## Author
 **Olstra**
