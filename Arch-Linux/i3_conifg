@@ -10,8 +10,8 @@
 ############################################################
 
 
-# mod key = windows key
-set $mod Mod4 
+# Set mod key (Mod1=<Alt>, Mod4=<Super>/"windows")
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -43,7 +43,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# default
+#bindsym $mod+Return exec i3-sensible-terminal
+
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -52,8 +55,10 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec dmenu_run
 
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi_run
+bindsym $mod+space exec --no-startup-id "rofi -show run -modi run"
 
+# rofi window switcher
+bindsym $mod+Tab exec --no-startup-id "rofi -show window"
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -99,11 +104,13 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
+
+# change to +d so no duplicate with launch rofi
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+d floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+d focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -114,15 +121,15 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1 "
-set $ws2 "2 "
-set $ws3 "3 "
-set $ws4 "4 "
+set $ws2 "2 "
+set $ws3 "3 "
+set $ws4 "4 "
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10 "
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -151,7 +158,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # assign programm to workspace
 assign [class="evolution"] $ws1
-assign [class="firefox"] $ws2
+#assign [class="firefox"] $ws2
 assign [class="thunar"] $ws3
 assign [class="subl"] $ws4
 
@@ -166,7 +173,10 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# default
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+x exec /home/oliver/.config/i3/rofi-log-out-script.sh
+
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
