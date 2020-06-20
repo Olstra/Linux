@@ -1,13 +1,16 @@
 /**
- * ROFI Color theme
- * Edit: Olstra
+ * Rofi Color theme
  * User: Qball
  * Copyright: Dave Davenport
+ * 
+ * Edit: Olstra
+ * put in: /home/oliver/.config/rofi/main-theme.rasi
+ * select in rofi config file: "rofi.theme: /.../main-theme.rasi"
  */
 
 configuration {
     // The display name of this browser
-    display-ssh:                   "  ";
+    display-ssh:                   "";
     // The display name of this browser
     display-run:                    "";
     // The display name of this browser
